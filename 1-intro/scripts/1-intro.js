@@ -1,7 +1,7 @@
-// 2
+// Task #2
 console.log("Kaminskyi");
 
-// 3
+// Task #3
 let course;
 let group;
 const valuseOfVariables = document.querySelector(".main__text");
@@ -16,7 +16,7 @@ course = group;
 console.log(course + " " + group);
 valuseOfVariables.innerHTML = valuseOfVariables.innerHTML + "<br>" + course + " " + group;
 
-// 4
+// Task #4
 let Person = {
     name: "Taras",
     currentYear: 2023,
@@ -26,6 +26,6 @@ let Person = {
 }
 console.log(Person);
 
-// 5
+// Task #5
 const isAdult = confirm("Are you of legal age?");
 console.log(isAdult);
