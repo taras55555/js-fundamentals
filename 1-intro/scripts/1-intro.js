@@ -25,3 +25,7 @@ let Person = {
     defaultValue: null
 }
 console.log(Person);
+
+// 5
+const isAdult = confirm("Are you of legal age?");
+console.log(isAdult);
