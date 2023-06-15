@@ -1,4 +1,5 @@
 // Task #6
+console.log("Task #6");
 let myName = "Taras";
 let mySurname = "Kaminskyi";
 const myGroup = "JavaScript Fundamentals 0906";
