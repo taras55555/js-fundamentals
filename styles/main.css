@@ -1,0 +1,35 @@
+.header {
+    color: var(--white-color);
+    background-color: var(--black-color);
+    padding: 32px;
+}
+
+.header__title {
+    font-size: 4em;
+}
+
+.header__text {
+    font-size: 3em;
+}
+
+.main {
+    color: var(--gray-color);
+    padding: 32px;
+}
+
+.main__title {
+    font-size: 3em;
+}
+
+.main__text {
+    text-align: left;
+}
+
+.text-link {
+    font-size: 2em;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+    color: var(--black-color);
+}
