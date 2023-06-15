@@ -6,7 +6,7 @@ console.log("Kaminskyi");
 console.log("Task #3");
 let course;
 let group;
-const valuseOfVariables = document.querySelector(".main__text");
+const valuseOfVariables = document.querySelector(".main-text");
 
 course = "JavaScript Fundamentals";
 group = "0906";

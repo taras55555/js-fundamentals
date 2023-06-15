@@ -4,7 +4,7 @@
     padding: 32px;
 }
 
-.header__title {
+.header-title {
     font-size: 4em;
 }
 
@@ -17,11 +17,11 @@
     padding: 32px;
 }
 
-.main__title {
+.main-title {
     font-size: 3em;
 }
 
-.main__text {
+.main-text {
     text-align: left;
 }
 
