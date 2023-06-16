@@ -1,7 +1,10 @@
+
 :root {
+    font-family: Arial, sans-serif;
+    
     --white-color: #fff;
     --black-color: #000;
-    --gray-color: #525252;
+    --gray-color: #777777;
 }
 
 .main-block {

@@ -6,9 +6,8 @@ calendar.value = currentDate;
 const runTaskButton = document.querySelector("#taskEight");
 
 runTaskButton.addEventListener('click', function () {
+    console.log("Task #8");
     calculateSeconds();
-
-    calendar.addEventListener('change', calculateSeconds);
 
     function calculateSeconds() {
         const formattedDate = calendar.value.split("-");
