@@ -1,20 +1,25 @@
+// Task #8
 const currentDate = new Date().toISOString().split('T')[0];
 const calendar = document.querySelector("#calendar");
 calendar.value = currentDate;
 
-calculateSeconds();
+const runTaskButton = document.querySelector("#taskEight");
 
-calendar.addEventListener('change', calculateSeconds);
+runTaskButton.addEventListener('click', function () {
+    calculateSeconds();
 
-function calculateSeconds() {
-    const formattedDate = calendar.value.split("-");
+    calendar.addEventListener('change', calculateSeconds);
 
-    const secondsInHour = 60 * 60;
-    const secondsInDay = numberOfSecondsInSelectedDay(formattedDate);
-    const secondsInMonth = numberOfSecondsInSelectedMonth(formattedDate);
+    function calculateSeconds() {
+        const formattedDate = calendar.value.split("-");
 
-    alert("Number of seconds in an hour - " + secondsInHour + "\nNumber of the seconds in the selected day - " + secondsInDay + "\nNumber of the seconds in the selected month - " + secondsInMonth);
-}
+        const secondsInHour = 60 * 60;
+        const secondsInDay = numberOfSecondsInSelectedDay(formattedDate);
+        const secondsInMonth = numberOfSecondsInSelectedMonth(formattedDate);
+
+        alert("Number of seconds in an hour - " + secondsInHour + "\nNumber of the seconds in the selected day - " + secondsInDay + "\nNumber of the seconds in the selected month - " + secondsInMonth);
+    }
+});
 
 function numberOfSecondsInSelectedDay(formattedDate) {
     const startDate = new Date(parseInt(formattedDate[0]), parseInt(formattedDate[1]) - 1, parseInt(formattedDate[2]), 0, 0, 0, 0);

@@ -25,10 +25,15 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    padding: 15px 0;
+}
+
+.main-sub-title {
+font-weight: bold;
 }
 
 .main-text {
-    text-align: left;
+    padding: 5px 0 0;
 }
 
 .text-link {
