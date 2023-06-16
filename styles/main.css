@@ -21,6 +21,12 @@
     font-size: 3em;
 }
 
+.section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 .main-text {
     text-align: left;
 }
@@ -32,4 +38,8 @@
 .text-link:hover {
     text-decoration: underline;
     color: var(--black-color);
+}
+
+.input-calendar {
+    border: 1px solid var(--black-color);
 }
