@@ -2,24 +2,13 @@
     color: var(--white-color);
     background-color: var(--black-color);
     padding: 32px;
-}
-
-.header-title {
-    font-size: 4em;
-}
-
-.header__text {
-    font-size: 3em;
+    font-size: 24px;
 }
 
 .main {
     color: var(--gray-color);
     padding: 32px;
-    font-size: 18px;
-}
-
-.main-title {
-    font-size: 3em;
+    font-size: 24px;
 }
 
 .list {
@@ -45,7 +34,6 @@
 .text-link {
     color: inherit;
     cursor: pointer;
-    font-size: 1em;
     padding: 5px 0;
 }
 
