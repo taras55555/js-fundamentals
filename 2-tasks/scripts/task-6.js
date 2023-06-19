@@ -17,5 +17,5 @@ runTaskButton.addEventListener('click', function () {
     console.log(data);
     arr = arr.filter(element => element !== data);
     console.log(arr);
-    alert("Chack the console")
+    alert("Check the console")
 });
