@@ -65,6 +65,10 @@
     color: var(--black-color);
 }
 
+.button-container {
+    display: flex;
+}
+
 .button-run {
     animation-name: background-color;
     animation-duration: 1s;
@@ -75,6 +79,7 @@
     font-family: inherit;
     font-weight: bold;
     padding: 10px;
+    margin: 0 20px 0 0;
     box-shadow: 6px 6px 9px var(--black-color);
 }
 
