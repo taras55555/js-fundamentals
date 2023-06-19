@@ -14,6 +14,8 @@ runTaskButton.addEventListener('click', function () {
             data = element;
         }
     });
+    console.log(data);
     arr = arr.filter(element => element !== data);
     console.log(arr);
+    alert("Chack the console")
 });
