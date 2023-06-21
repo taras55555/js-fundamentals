@@ -11,7 +11,7 @@ runTaskButton.addEventListener('click', function () {
     isAdult >= 18 ? alert("You are already of legal age") : alert("You are still too young");
 });
 
-function processInput(isAdult) {
+export function processInput(isAdult) {
     if (isAdult === null) {
         return NaN;
     } else {
