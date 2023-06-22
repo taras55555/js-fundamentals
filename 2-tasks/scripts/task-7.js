@@ -23,7 +23,7 @@ runTaskButton1.addEventListener('click', function () {
     const debt = Math.floor(countOfDelays / delayLimit) * amountOfFine;
 
     const howManyRows = Math.ceil((debt + expectedSalary) / amountPerBlockSizeRows);
-    alert("expectedSalary = " + expectedSalary + "\ncountOfDelays = " + countOfDelays + "\nHow many lines of code should he write?\nAnswer - " + howManyRows * blockSize);
+    alert("expectedSalary = " + expectedSalary + "$\ncountOfDelays = " + countOfDelays + "\nHow many lines of code should he write?\nAnswer - " + howManyRows * blockSize);
 
 });
 
@@ -45,12 +45,28 @@ runTaskButton2.addEventListener('click', function () {
     const timesLate = income >= expectedSalary
         ? "He can be late " + (Math.floor(extraMoney / amountOfFine) * delayLimit + delayLimit - 1) + " times"
         : "His income is lower than desired, but he can be late twice.";
-    alert("numberLinesCode = " + numberLinesCode + "\nincome = " + income + "\nexpectedSalary = " + expectedSalary + "\nextraMoney = " + extraMoney + "\n" + timesLate);
+    alert("numberLinesCode = " + numberLinesCode + "\nincome = " + income + "$\nexpectedSalary = " + expectedSalary + "\nextraMoney = " + extraMoney + "$\n" + timesLate);
 });
 
 // користувач вводить кількість рядків коду і кількість запізнень, визначити, скільки грошей заплатять Васі і чи заплатять взагалі.
 runTaskButton3.addEventListener('click', function () {
-    alert("The solution for this task is currently unavailable.");
+    let numberLinesCode = processOnlyNaturalNum(window.prompt("Type the number of lines of code"));
+    while (isNaN(numberLinesCode) || numberLinesCode === null) {
+        numberLinesCode = processOnlyNaturalNum(window.prompt("A number should be a natural or zero\nType the number of lines of code"));
+    }
+    let countOfDelays = processOnlyNaturalNum(window.prompt("Type number of delays"));
+    while (isNaN(countOfDelays) || countOfDelays === null) {
+        countOfDelays = processOnlyNaturalNum(window.prompt("A number should be a natural or zero\nType number of delays"));
+    }
+
+    const income = Math.floor(numberLinesCode / blockSize) * amountPerBlockSizeRows;
+    const debt = Math.floor(countOfDelays / delayLimit) * amountOfFine;
+
+    const salary = income > debt
+        ? "Good! He will earn " + (income-debt) +"$"
+        : "Bad! He has a debt of " + (income-debt) + "$";
+
+    alert("numberLinesCode = " + numberLinesCode + "\ncountOfDelays = " + countOfDelays + "\nincome = " + income + "\ndebt = " + debt + "\n" + salary);
 });
 
 
