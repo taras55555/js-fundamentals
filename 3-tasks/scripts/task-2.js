@@ -1,4 +1,4 @@
-// Task #1
+// Task #2
 const runTaskButton = document.querySelector("#taskTwo");
 
 runTaskButton.addEventListener('click', function () {
