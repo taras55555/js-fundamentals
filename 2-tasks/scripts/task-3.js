@@ -4,7 +4,6 @@ const runTaskButton = document.querySelector("#taskThree");
 runTaskButton.addEventListener('click', function () {
     console.log("Task #3");
     let isAdult = processInput(window.prompt("How old are you?"));
-    console.log(isAdult);
     while (isNaN(isAdult)) {
         isAdult = processInput(window.prompt("The field must contain only an integer number.\nHow old are you?"));
     }
