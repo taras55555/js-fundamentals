@@ -16,7 +16,7 @@ export function processInput(isAdult) {
         return NaN;
     } else {
         isAdult = isAdult.replace(",", ".");
-        isAdult = isAdult <= 0 ? NaN : isAdult;
+        isAdult = isAdult < 0 ? NaN : isAdult;
         return Number(isAdult);
     }
 }
