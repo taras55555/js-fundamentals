@@ -3,8 +3,10 @@ const runTaskButton = document.querySelector("#taskThree");
 const rangeMax = 500;
 
 runTaskButton.addEventListener('click', function () {
+    console.log("Task #3");
     const k=5;    
     console.log(randArray(k));
+    alert("Check the console");
 });
 
 function randArray(k) {

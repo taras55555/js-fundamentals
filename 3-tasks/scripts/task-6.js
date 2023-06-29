@@ -2,6 +2,7 @@
 const runTaskButton = document.querySelector("#taskSix");
 
 runTaskButton.addEventListener('click', function () {
+    console.log("Task #6");
     alert(calc(10, 3, 1));
 });
 

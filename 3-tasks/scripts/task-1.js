@@ -2,8 +2,9 @@
 const runTaskButton = document.querySelector("#taskOne");
 
 runTaskButton.addEventListener('click', function () {
-    let arr = createArray(10, 9);
-    console.log(arr); //
+    console.log("Task #1");
+    let arr = createArray(3, 9);
+    console.log(arr);
     alert("Check the console");
 });
 
