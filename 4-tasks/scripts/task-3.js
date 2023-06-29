@@ -2,6 +2,7 @@
 const runTaskButton = document.querySelector("#taskThree");
 
 runTaskButton.addEventListener('click', function () {
+    console.log("Task #3");
     console.log(calcRectangleArea("0.1", 5));
     console.log(calcRectangleArea(0.1, 5));
     console.log(calcRectangleArea(0, 5));
