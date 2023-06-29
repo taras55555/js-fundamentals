@@ -4,7 +4,7 @@ const runTaskButton = document.querySelector("#taskOne");
 runTaskButton.addEventListener('click', function () {
     console.log("Task #1");
     const arr = [5, 5, 44, 2, 3, 8, 4, 32, 4];
-    console.log(sumSliceArray(arr, 3, 10));
+    console.log(sumSliceArray(arr, 1, 7));
 });
 
 function sumSliceArray(arr, first, second) {

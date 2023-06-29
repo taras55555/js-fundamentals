@@ -13,17 +13,25 @@ function checkAge() {
     const userStatus = window.prompt("Type your role (admin, moderator, user)");
     let canWatchMovie = false;
     try {
-        if (userName === null || userName.trim() === "") throw new Error("The field \"username\" is empty! Please enter your username");
-        if (userAge === null || userAge.trim() === "") throw new Error("The field \"user age\" is empty! Please enter your age");
-        if (userStatus === null || userStatus.trim() === "") throw new Error("The field \"user status\" is empty! Please enter your role");
-        if (isNaN(userAge)) throw new TypeError("The field must contain only an integer number");
-        if (!(userAge >= 18 && userAge <= 70)) throw new RangeError("Age should be in the range of 18 - 70");
-        if (!rolesArray.includes(userStatus.toLowerCase())) throw new EvalError("Please check your role");
+        if (userName === null || userName.trim() === "") throw Error("The field \"username\" is empty! Please enter your username");
+        if (userAge === null || userAge.trim() === "") throw Error("The field \"user age\" is empty! Please enter your age");
+        if (isNaN(userAge)) throw TypeError("The field must contain only an integer number");
+        if (!(userAge >= 18 && userAge <= 70)) throw RangeError("Age should be in the range of 18 - 70");
+        if (userStatus === null || userStatus.trim() === "") throw Error("The field \"user status\" is empty! Please enter your role");
+        if (!rolesArray.includes(userStatus.toLowerCase())) throw EvalError("Please check your role");
         canWatchMovie = true;
         alert("Great!\nUsername - " + userName + "\nUser age - " + userAge + "\nUser status - " + userStatus + "\nYou can watch a movie!");
     }
     catch (error) {
-        alert(error.name + "\n" + error.message);
+        if (error instanceof TypeError) {
+            alert(error.name + "\n" + error.message);
+        } else if (error instanceof RangeError) {
+            alert(error.name + "\n" + error.message);
+        } else if (error instanceof EvalError) {
+            alert(error.name + "\n" + error.message);
+        } else if (error instanceof Error) {
+            alert(error.name + "\n" + error.message);
+        }
         alert("We're sorry. Please check the data");
     }
     return canWatchMovie;
