@@ -3,5 +3,12 @@ const runTaskButton = document.querySelector("#taskTwo");
 
 runTaskButton.addEventListener('click', function () {
     console.log("Task #2");
-    alert("The solution for this task is currently unavailable.");
+    let mentor = {
+        course: "JS fundamental",
+        duration: 3,
+        direction: "web-development"
+    };
+    console.log(propsCount(mentor));
 });
+
+const propsCount = (obj) => Object.keys(obj).length;
