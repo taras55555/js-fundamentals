@@ -25,6 +25,7 @@ runTaskButton.addEventListener('click', function () {
     }
     const secondCircle = new Circle(9, 9, 9);
     console.log(secondCircle.toString() + " - " + typeof secondCircle.toString());
+    alert("Check the console");
 });
 
 

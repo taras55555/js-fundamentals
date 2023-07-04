@@ -3,19 +3,29 @@ const runTaskButton = document.querySelector("#taskFour");
 
 runTaskButton.addEventListener('click', function () {
     console.log("Task #4");
-    // const txt = "A marker pen, fine liner, marking pen, felt-tip pen, felt pen, flow marker, sign pen (in South Korea), vivid (in New Zealand), texta (in Australia), sketch pen (in South Asia) or koki (in South Africa), is a pen which has its own ink source and a tip made of porous, pressed fibers such as felt.[1] A marker pen consists of a container (glass, aluminum or plastic) and a core of an absorbent material that holds the ink. The upper part of the marker contains the nib that was made in earlier times of a hard felt material, and a cap to prevent the marker from drying out."
-    const txt = "Afg"
-    const redMarker = new MarkerPen("red", 0.1);
+    const txt = "A marker pen, fine liner, marking pen, felt-tip pen, felt pen, flow marker, sign pen (in South Korea), vivid (in New Zealand), texta (in Australia), sketch pen (in South Asia) or koki (in South Africa), is a pen which has its own ink source and a tip made of porous, pressed fibers such as felt.[1] A marker pen consists of a container (glass, aluminum or plastic) and a core of an absorbent material that holds the ink. The upper part of the marker contains the nib that was made in earlier times of a hard felt material, and a cap to prevent the marker from drying out."
+    // const txt = "A marker pen";
+
+    const redMarker = new MarkerPen("red", 0.015);
     const greenMarker = new MarkerPen("green", 0.4);
     const orangeMarker = new MarkerPen("orange", 0.2);
 
     redMarker.writeText(txt);
+
     greenMarker.writeText(txt);
     greenMarker.writeText(txt);
     orangeMarker.writeText(txt);
-    redMarker.writeText(txt);
+
     redMarker.writeText(txt);
 
+    const redRefillableMarker = new MarkerRefill("red", 0.005);
+    redRefillableMarker.writeText(txt);
+    redRefillableMarker.refillMarker();
+    redRefillableMarker.writeText(txt);
+
+    const greenRefillableMarker = new MarkerRefill("green", 0.057);
+    greenRefillableMarker.writeText(txt);
+    alert("Check the console");
 });
 
 class MarkerPen {
@@ -23,26 +33,41 @@ class MarkerPen {
         this.markerColor = markerColor;
         this.inkLevel = inkLevel;
     }
-
+    setInkLevel(val) {
+        this.inkLevel = parseFloat((this.inkLevel + val).toFixed(3));
+    }
+    getIncLevel() {
+        return this.inkLevel;
+    }
     writeText(str) {
-        console.log("The current level of ink in the " + this.markerColor + " marker - " + this.inkLevel.toFixed(3) * 100 + "%");
+        console.log("The current level of ink in the " + this.markerColor + " marker - " + this.getIncLevel() + "%");
         let count = 0;
         let output = "";
-        let inkHasRunOut = this.inkLevel >= 0.005 ? false : true;
+        let inkHasRunOut = this.getIncLevel() >= 0.005 ? false : true;
         while (!inkHasRunOut && count < str.length) {
             output = output + str[count];
             if (str[count] !== " ") {
-                this.inkLevel -= 0.005;
+                this.setInkLevel(-0.005);
             }
-            inkHasRunOut = this.inkLevel >= 0.005 ? false : true;
+            inkHasRunOut = this.getIncLevel() >= 0.005 ? false : true;
             count++
         }
 
         console.log("%c" + output, "color:" + this.markerColor);
-        console.warn(inkHasRunOut === true ? "Not enough ink in the " + this.markerColor + " marker" : this.inkLevel.toFixed(3) * 100 + "%");
+        console.warn(inkHasRunOut === true ? "The " + this.markerColor + " marker has run out of ink" : "Ink remaining - " + this.getIncLevel() + "%");
     }
 }
 
+class MarkerRefill extends MarkerPen {
+    constructor(markerColor, inkLevel) {
+        super(markerColor, inkLevel);
+    }
+
+    refillMarker() {
+        super.setInkLevel(1);
+        console.log("The marker is refilled");
+    }
+}
 // А. Реалізувати клас, який описує простий маркер. У класі мають бути такі компоненти:
 // поле, яке зберігає колір маркера;
 // поле, яке зберігає кількість чорнила в маркері (у відсотках);

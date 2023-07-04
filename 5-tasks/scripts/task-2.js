@@ -9,6 +9,7 @@ runTaskButton.addEventListener('click', function () {
         direction: "web-development"
     };
     console.log(propsCount(mentor));
+    alert("Check the console");
 });
 
 const propsCount = (obj) => Object.keys(obj).length;

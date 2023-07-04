@@ -9,6 +9,7 @@ runTaskButton.addEventListener('click', function () {
     const student = new Student("Taras", "Kaminskyi", 2017);
     console.log(student.showFullName("Stepanovych"));
     console.log("Current course: " + student.showCourse());
+    alert("Check the console");
 });
 
 class Person {
