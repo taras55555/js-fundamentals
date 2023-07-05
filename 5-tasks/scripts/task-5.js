@@ -50,7 +50,7 @@ runTaskButton.addEventListener('click', function () {
     for (let val of Worker.sortedMaxExperienceSalary(Worker.instances)) {
         console.log(val.fullName + ": " + val.showSalaryWithExperience());
     }
-
+    alert("Check the console");
 });
 
 class Worker {
