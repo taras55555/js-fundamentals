@@ -33,10 +33,12 @@ runTaskButton.addEventListener('click', function () {
     console.log("\nUnsorted salary:");
     const array = [worker1, worker2, worker3];
     console.log(array);
-    
+
     console.log("\nSorted salary:");
-    array.sort((a, b) => a.showSalaryWithExperience() - b.showSalaryWithExperience())
-    console.log(array);
+
+    for (let val of Worker.sortedMaxExperienceSalary(array)) {
+        console.log(val.fullName + ": " + val.showSalaryWithExperience());
+    }
 
 });
 
@@ -62,5 +64,16 @@ class Worker {
 
     showSalaryWithExperience() {
         return this.showSalary() * this.#experience;
+    }
+
+
+    static maxEperience(array) {
+        return array.reduce((max, current) => {
+            return current.showExp() > max.showExp() ? current : max;
+        });
+    }
+    static sortedMaxExperienceSalary(array) {
+        const filteredArray = array.filter(element => element.showExp() === Worker.maxEperience(array).showExp());
+        return filteredArray.sort((a, b) => a.showSalaryWithExperience() - b.showSalaryWithExperience())
     }
 }
