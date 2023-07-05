@@ -40,7 +40,7 @@ class MarkerPen {
         return this.inkLevel;
     }
     writeText(str) {
-        console.log("\nThe current level of ink in the " + this.markerColor + " marker - " + MarkerPen.convertToPercentages(this.getIncLevel()) + "%");
+        console.log("\nThe current level of ink in the " + this.markerColor + " marker - " + MarkerPen.convertToPercentages(this.getIncLevel()));
         let count = 0;
         let output = "";
         let inkHasRunOut = this.getIncLevel() >= 0.005 ? false : true;
@@ -57,8 +57,9 @@ class MarkerPen {
         console.warn(inkHasRunOut === true ? "The " + this.markerColor + " marker has run out of ink" : "Ink remaining - " + MarkerPen.convertToPercentages(this.getIncLevel()));
     }
     static convertToPercentages(val) {
-        const res = (100 * val).toFixed(2);
-        return res + "%";
+        const splitVal = (100 * val).toFixed(2).split(".");
+        const floatVal = splitVal[1].indexOf(0) === 0 && splitVal[1][1].indexOf(0) === 0 ? "%" : splitVal[1][1].indexOf(0) === 0 ? "." + splitVal[1][0] + "%" : "." + splitVal[1] + "%"
+        return splitVal[0] + floatVal;
     }
 }
 
