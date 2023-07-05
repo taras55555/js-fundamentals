@@ -30,13 +30,24 @@ runTaskButton.addEventListener('click', function () {
     console.log("New experience: " + worker3.showExp());
     console.log(worker3.fullName + " salary: " + worker3.showSalaryWithExperience() + "\n");
 
-    console.log("\nUnsorted salary:");
-    const array = [worker1, worker2, worker3];
-    console.log(array);
+    let worker4 = new Worker("Wednesday Addams", 55, 23);
+    console.log("\n" + worker4.fullName);
+    console.log("\n" + worker4.fullName + " salary: " + worker4.showSalary());
+    console.log("New experience: " + worker4.showExp());
+    console.log(worker4.fullName + " salary: " + worker4.showSalaryWithExperience());
+    worker4.setExp(1.5);
+    console.log("New experience: " + worker4.showExp());
+    console.log(worker4.fullName + " salary: " + worker4.showSalaryWithExperience() + "\n");
+
+    // console.log("\nUnsorted salary:");
+
+    // const array = [worker1, worker2, worker3];
+
+    // console.log(array);
 
     console.log("\nSorted salary:");
 
-    for (let val of Worker.sortedMaxExperienceSalary(array)) {
+    for (let val of Worker.sortedMaxExperienceSalary(Worker.instances)) {
         console.log(val.fullName + ": " + val.showSalaryWithExperience());
     }
 
@@ -49,7 +60,10 @@ class Worker {
         this.dayRate = dayRate;
         this.workingDays = workingDays;
         this.#experience = 1.2;
+        Worker.instances.push(this);
     }
+
+    static instances = [];
 
     showSalary() {
         return this.dayRate * this.workingDays;
