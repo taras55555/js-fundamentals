@@ -1,7 +1,20 @@
 // Task #3
-const runTaskButton = document.querySelector("#taskThree");
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #3");
-    alert("The solution for this task is currently unavailable.");
-});
+let html = document.documentElement;
+let body = document.createElement("body");
+
+let main = document.createElement("main");
+body.append(main)
+main.classList.add("mainClass");
+main.classList.add("check");
+main.classList.add("item");
+
+let div = document.createElement("div");
+main.append(div);
+div.id = "myDiv";
+
+let p = document.createElement("p");
+div.append(p);
+p.textContent = "First paragraph";
+
+html.append(body);

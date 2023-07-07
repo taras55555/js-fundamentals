@@ -4,7 +4,7 @@ const runTaskButton = document.querySelector("#taskOne");
 runTaskButton.addEventListener('click', function () {
     console.log("Task #1");
     const ulElements = document.querySelectorAll("#list li");
-    const resultElement = document.querySelector("#task1Result");
+    const resultElement = document.querySelector("#task-one-result");
     const resultArray = [];
     const arrayUlElements = Array.from(ulElements);
     const lengthList = arrayUlElements.length;

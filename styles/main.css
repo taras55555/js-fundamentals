@@ -78,9 +78,11 @@
     color: var(--white-color);
     font-family: inherit;
     font-weight: bold;
+    font-size: 0.6em;
     padding: 10px;
     margin: 0 20px 0 0;
     box-shadow: 6px 6px 9px var(--black-color);
+
 }
 
 @keyframes background-color {
