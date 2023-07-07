@@ -21,11 +21,10 @@ colorElements.forEach(function(element) {
         let gradientChange = document.querySelector(".gradient[color='"+thisColor+"']");
         let imgChange = document.querySelector("img[color='"+thisColor+"']");
 
-        outPrice.textContent = thisPrice+"$";
+        outPrice.textContent = thisPrice;
 
         this.classList.add("active");
         gradientChange.classList.add("second");
         imgChange.classList.add("show");
-
     });
 });
