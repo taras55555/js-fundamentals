@@ -1,7 +1,8 @@
 // Task #5
-const runTaskButton = document.querySelector("#taskFive");
+const circle = document.querySelectorAll(".circle");
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #5");
-    alert("The solution for this task is currently unavailable."); 
-});
+circle.forEach(tag => {
+    currentAttribute = tag.getAttribute("data-anim");
+    tag.classList.add(currentAttribute)
+    console.log(tag);
+})
