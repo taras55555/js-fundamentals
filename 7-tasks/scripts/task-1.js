@@ -24,7 +24,7 @@ class CreateBrowserWindow {
         this.height = height;
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
-        this.wind = window.open('../../images/js-ico.png', '', `width=${this.width}, height=${this.height}`);
+        this.wind = window.open('../images/js-ico.png', '', `width=${this.width}, height=${this.height}`);
     }
 
     resizeWindow() {
