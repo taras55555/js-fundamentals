@@ -1,5 +1,4 @@
 // Task #3
-console.log("Task #3");
 clickEvent.addEventListener('click', () => changeBodyBackgroundColor('blue'));
 doubleClickEvent.addEventListener('dblclick', () => changeBodyBackgroundColor('pink'));
 pressEvent.addEventListener('mousedown', () => changeBodyBackgroundColor('brown'));
