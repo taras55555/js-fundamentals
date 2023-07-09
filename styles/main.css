@@ -66,6 +66,7 @@
 }
 
 .button-container {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
 }
@@ -84,6 +85,11 @@
     margin: 8px 20px 8px 0;
     box-shadow: 6px 6px 9px var(--black-color);
 
+}
+
+.select-list {
+    border: solid 1px;
+    font-size: inherit;
 }
 
 @keyframes background-color {
