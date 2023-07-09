@@ -1,7 +1,9 @@
 // Task #6
-const runTaskButton = document.querySelector("#taskSix");
+printResult();
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #6");
-    alert("The solution for this task is currently unavailable.");
-});
+window.addEventListener('resize', printResult)
+
+function printResult() {
+    screenWidthValue.textContent = window.innerWidth;
+    screenHeightValue.textContent = window.innerHeight;
+}

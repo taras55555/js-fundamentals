@@ -65,7 +65,11 @@
     color: var(--black-color);
 }
 
-.text-box {
+.text-box-row {
+    display: flex;
+}
+
+.text-box-column {
     display: flex;
     flex-direction: column;
     align-items: baseline;
