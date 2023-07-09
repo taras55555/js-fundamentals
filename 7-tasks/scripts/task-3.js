@@ -1,7 +1,13 @@
 // Task #3
-const runTaskButton = document.querySelector("#taskThree");
+console.log("Task #3");
+clickEvent.addEventListener('click', () => changeBodyBackgroundColor('blue'));
+doubleClickEvent.addEventListener('dblclick', () => changeBodyBackgroundColor('pink'));
+pressEvent.addEventListener('mousedown', () => changeBodyBackgroundColor('brown'));
+pressEvent.addEventListener('mouseleave', () => changeBodyBackgroundColor('white'));
+pressEvent.addEventListener('mouseup', () => changeBodyBackgroundColor('white'));
+hoverEvent.addEventListener('mouseenter', () => changeBodyBackgroundColor('yellow'));
+hoverEvent.addEventListener('mouseleave', () => changeBodyBackgroundColor('white'));
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #3");
-    alert("The solution for this task is currently unavailable.");
-});
+function changeBodyBackgroundColor(newColor) {
+    document.body.style.backgroundColor = newColor;
+}
