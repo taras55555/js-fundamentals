@@ -1,7 +1,8 @@
 // Task #2
-const runTaskButton = document.querySelector("#taskTwo");
 
-runTaskButton.addEventListener('click', function () {
+styleButton.addEventListener('click', function () {
     console.log("Task #2");
-    alert("The solution for this task is currently unavailable.");
+    text.style.color = 'orange';
+    text.style.fontSize = '20px';
+    text.style.fontFamily = 'Comic Sans MS';
 });
