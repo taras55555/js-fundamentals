@@ -97,6 +97,10 @@
 
 }
 
+.select-list-container {
+    text-align: start;
+}
+
 .select-list {
     border: solid 1px;
     font-size: inherit;
