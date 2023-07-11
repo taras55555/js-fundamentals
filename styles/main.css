@@ -75,6 +75,14 @@
     align-items: baseline;
 }
 
+.green-text {
+    color:var(--green-color);
+}
+
+.red-text {
+    color: var(--red-color);
+}
+
 .button-container {
     align-items: center;
     display: flex;
