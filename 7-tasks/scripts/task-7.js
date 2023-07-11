@@ -69,7 +69,7 @@ class FillingContryiesSelect extends SelectList {
     createSelectList() {
         this.listSelect.name = this.name;
         this.listSelect.id = this.name;
-        this.listSelect.classList.add("select-list");
+        this.listSelect.classList.add("input-field");
         super.appendSelectList();
     }
 }

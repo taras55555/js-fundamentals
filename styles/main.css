@@ -76,7 +76,7 @@
 }
 
 .green-text {
-    color:var(--green-color);
+    color: var(--green-color);
 }
 
 .red-text {
@@ -109,16 +109,17 @@
     text-align: start;
 }
 
-.select-list {
+.input-field {
     border: solid 1px;
     font-size: inherit;
     margin: 8px;
     padding: 8px;
     width: 222px;
+    text-align: left;
 }
 
-.select-list option {
-    text-align: left;
+.input-field option {
+    text-align: inherit;
 }
 
 @keyframes background-color {
