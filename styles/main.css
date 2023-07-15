@@ -65,8 +65,15 @@
     color: var(--black-color);
 }
 
+.text-box {
+    display: flex;
+    flex-wrap:wrap;
+}
+
 .text-box-row {
     display: flex;
+    flex-direction: row;
+    padding-right: 8px;
 }
 
 .text-box-column {
@@ -106,7 +113,10 @@
 }
 
 .select-list-container {
-    text-align: start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .input-field {
@@ -114,7 +124,6 @@
     font-size: inherit;
     margin: 8px;
     padding: 8px;
-    /* width: 222px; */
     width: 100%;
     text-align: left;
 }

@@ -1,7 +1,5 @@
 // Task #5
-const runTaskButton = document.querySelector("#taskFive");
+import {InputHandler} from './input-handler.js';
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #5");
-    alert("The solution for this task is currently unavailable."); 
-});
+const field = new InputHandler('taskFive', 'taskFive', 'keyup', 'resultTaskFive', 'checkEmailV2');
+field.newEventListener();
