@@ -1,30 +1,82 @@
 // Task #6
-const colorElements = document.querySelectorAll(".color");
-const gradientElements = document.querySelectorAll(".gradient");
-const imgElements = document.querySelectorAll("img.shoe");
-const outPrice = document.querySelector("h1#outprice");
-// console.log(gradientElements)
-// console.log(imgElements)
-colorElements.forEach(function(element) {
-    element.addEventListener('click', function() {
-        colorElements.forEach(function(el) {
-            let currentGradient = document.querySelector(".gradient[color='"+el.getAttribute("color") + "']");
-            let currentImg = document.querySelector("img[color='"+el.getAttribute("color") + "']");
+class createListener {
+    constructor(elementsGroup, mutableGroup) {
+        this.elementsGroup = elementsGroup;
+        if (typeof mutableGroup !== 'undefined') {
+            this.mutableGroup = mutableGroup;
+        } else {
+            this.mutableGroup = null
+        };
+        this.newActiveElement = '';
+    }
 
-            el.classList.remove('active');
-            currentGradient.classList.remove('second');
-            currentImg.classList.remove('show');
+    getElementsGroup() {
+        return this.elementsGroup;
+    }
+    getMutableGroup() {
+        return this.mutableGroup;
+    }
+
+    setnewActiveElement(newColor) {
+        this.newActiveElement = newColor;
+    }
+
+    getnewActiveElement() {
+        return this.newActiveElement;
+    }
+    addListener() {
+        const currentElements = document.querySelectorAll(`.${this.getElementsGroup().mover.childClass}`);
+        currentElements.forEach(element => {
+            element.addEventListener('click', () => {
+                this.changeColorContainer(element)
+                if (this.getMutableGroup() !== null) this.changeMutableGroup(element);
+                this.changePrice()
+            });
         });
-        let thisPrice = this.getAttribute("data-price");
-        let thisColor = this.getAttribute("color");
+    }
+    changeColorContainer(element) {
+        const currentActiveColor = document.querySelector(`.${this.getElementsGroup().mover.childClass}.${this.getElementsGroup().mover.flag}`);
+        currentActiveColor.classList.remove(`${this.getElementsGroup().mover.flag}`);
+        element.classList.add(`${this.getElementsGroup().mover.flag}`);
+        this.setnewActiveElement(element.getAttribute(`${this.getElementsGroup().mover.childClass}`));
+    }
 
-        let gradientChange = document.querySelector(".gradient[color='"+thisColor+"']");
-        let imgChange = document.querySelector("img[color='"+thisColor+"']");
+    changeMutableGroup() {
+        const arrayKeys = Object.keys(this.getMutableGroup());
+        arrayKeys.forEach(element => {
+            const deleteClass = document.querySelector(`.${this.getMutableGroup()[element].childClass}.${this.getMutableGroup()[element].flag}`);
+            deleteClass.classList.remove(`${this.getMutableGroup()[element].flag}`);
 
-        outPrice.textContent = thisPrice;
+            const selectedElement = document.querySelector(`.${this.getMutableGroup()[element].childClass}[${this.getElementsGroup().mover.childClass}=${this.getnewActiveElement()}]`);
+            selectedElement.classList.add(`${this.getMutableGroup()[element].flag}`);
+        });
+    }
+    changePrice() {
+        const dataPriceGradient = parseFloat(document.querySelector(`.gradient.second`).getAttribute('data-price'));
+        const dataPriceColor = parseFloat(document.querySelector(`.color.active`).getAttribute('data-price'));
+        const dataPriceSize = parseFloat(document.querySelector(`.size.active`).getAttribute('data-price'));
+        const dataQuantity = document.querySelector(`#qty`).value;
+        const price = dataPriceGradient < dataPriceColor ? (dataPriceGradient + dataPriceSize) * dataQuantity : (dataPriceColor + dataPriceSize) * dataQuantity;
+        outprice.textContent = `${price.toFixed(2)} $`;
+    }
+}
+const propertiesColor = {
+    mover: { parentClass: 'colors', childClass: 'color', flag: 'active' }
+}
+const mutableColor = {
+    element1: { parentClass: 'gradients', childClass: 'gradient', flag: 'second' },
+    element2: { parentClass: 'shoeBackground', childClass: 'shoe', flag: 'show' }
+}
 
-        this.classList.add("active");
-        gradientChange.classList.add("second");
-        imgChange.classList.add("show");
-    });
-});
+const propertiesSize = {
+    mover: { parentClass: 'size-container', childClass: 'size', flag: 'active' }
+}
+
+const color = new createListener(propertiesColor, mutableColor);
+color.addListener();
+
+const size = new createListener(propertiesSize);
+size.addListener();
+size.changePrice();
+
+qty.addEventListener('change', size.changePrice);
