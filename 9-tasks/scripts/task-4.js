@@ -1,7 +1,10 @@
 // Task #4
-const runTaskButton = document.querySelector("#taskFour");
-
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #4");
-    alert("The solution for this task is currently unavailable.");
+checkLimit();
+$('#taskFour input[type="checkbox"]').on('change', function (event) {
+    event.preventDefault();
+    checkLimit();
 });
+
+function checkLimit() {
+    if($('#taskFour input[type="checkbox"]:checked').length >= 3) $('#taskFour input[type="checkbox"]').attr("disabled", true);
+}

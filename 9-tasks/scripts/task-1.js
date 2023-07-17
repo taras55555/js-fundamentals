@@ -1,7 +1,2 @@
-// Task #1
-const runTaskButton = document.querySelector("#taskOne");
-
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #1");
-    alert("The solution for this task is currently unavailable.");
-});
+$('h2.head').css('background-color', 'green');
+$('h2.head .inner').css('font-size', '35px');

@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>jQuery</title>
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="icon" href="../images/js-ico.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,46 +23,68 @@
                     <div class="navigation-element"><a href="../index.html" class="text-link">Home</a></div>
                 </nav>
             </div>
-            <h3 class="main-title">9. </h3>
+            <h3 class="main-title">9. jQuery</h3>
             <section>
                 <div class="section-content">
                     <div class="main-sub-title">Task #1</div>
-                    <button class="button-run" id="taskOne">Run task 1</button>
+                    <h2 class="head">header1</h2>
+                    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+                    <h2>header3</h2>
+                    <h2 class="head">header4<span>inner elem2</span></h2>
+                    <h2>header5</h2>
                 </div>
             </section>
             <section>
                 <div class="section-content">
                     <div class="main-sub-title">Task #2</div>
-                    <button class="button-run" id="taskTwo">Run task 2</button>
+                    <a href="http://taras55555.github.io/js-fundamentals/9-tasks/index.html"
+                        class="text-link jqueryLinks">Just first link</a>
+                    <a href="https://taras55555.github.io/js-fundamentals/9-tasks/index.html"
+                        class="text-link jqueryLinks">Just second link</a>
                 </div>
             </section>
             <section>
                 <div class="section-content">
                     <div class="main-sub-title">Task #3</div>
-                    <button class="button-run" id="taskThree">Run task 3</button>
+                    <div id="taskThree">
+                        <h3>header1</h3>
+                        <div>text1</div>
+                        <h3>header2</h3>
+                        <div>text2</div>
+                    </div>
                 </div>
             </section>
             <section>
                 <div class="section-content">
                     <div class="main-sub-title">Task #4</div>
-                    <button class="button-run" id="taskFour">Run task 4</button>
-                </div>
-            </section>
-            <section>
-                <div class="section-content">
-                    <div class="main-sub-title">Task #5</div>
-                    <button class="button-run" id="taskFive">Run task 5</button>
-                </div>
-            </section>
-            <section>
-                <div class="section-content">
-                    <div class="main-sub-title">Task #6</div>
-                    <button class="button-run" id="taskSix">Run task 6</button>
+
+                    <form action="#" id="taskFour" style="display: inline-block; text-align: initial;">
+
+                        <input type="checkbox" id="checkOne" name="checkOne" value="1">
+                            <label for="checkOne">One</label></br>
+                        
+                            <input type="checkbox" id="checkTwo" name="checkTwo" value="2">
+                            <label for="checkTwo">Two</label></br>
+                        
+                            <input type="checkbox" id="checkThree" name="checkThree" value="3">
+                            <label for="checkThree">Three</label></br>
+                        
+                            <input type="checkbox" id="checkFour" name="checkFour" value="4">
+                            <label for="checkFour">Four</label></br>
+                        
+                            <input type="checkbox" id="checkFive" name="checkFive" value="5">
+                            <label for="checkFive">Five</label></br>
+                        
+                            <input type="checkbox" id="checkSix" name="checkSix" value="6">
+                            <label for="checkSix">Six</label></br>
+                        
+                    </form>
+
                 </div>
             </section>
         </main>
     </div>
-    <script src="../8-tasks/scripts/index.js"></script>
+    <script src="../9-tasks/scripts/index.js"></script>
 </body>
 
 </html>

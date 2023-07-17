@@ -1,7 +1,5 @@
 // Task #2
-const runTaskButton = document.querySelector("#taskTwo");
-
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #2");
-    alert("The solution for this task is currently unavailable.");
-});
+$(".jqueryLinks").each(function() {
+    const testExpression = /^https:\/\//i;
+    if(testExpression.test($(this).attr('href'))) $(this).attr('target', '_blank');
+})
