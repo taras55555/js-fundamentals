@@ -1,7 +1,12 @@
 // Task #5
-const runTaskButton = document.querySelector("#taskFive");
+console.log("Task #5");
+let arr = [];
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #5");
-    alert("The solution for this task is currently unavailable."); 
-});
+for (let i = 0; i <= 2; i++) {
+   arr[i] = function () {
+      console.log(i);
+   };
+}
+
+arr[0](); // 0
+arr[arr.length - 1](); // 2

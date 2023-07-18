@@ -1,7 +1,15 @@
 // Task #4
-const runTaskButton = document.querySelector("#taskFour");
+console.log("Task #4");
+let keys = [1, 2, 3, 4];
+let values = ["div", "span", "b", "i"];
+let map = mapBuilder(keys, values);
+console.log(map.size); // 4
+console.log(map.get(2)); // "span"
 
-runTaskButton.addEventListener('click', function () {
-    console.log("Task #4");
-    alert("The solution for this task is currently unavailable.");
-});
+function mapBuilder(keysArray, valuesArray) {
+    const newMap = new Map();
+    keysArray.forEach((element, index) => {
+        newMap.set(element, valuesArray[index]);
+    });
+    return newMap;
+}
