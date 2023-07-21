@@ -1,14 +1,18 @@
 // Task #1
-console.log("Task #1");
-let names = {
-    first: "Tom",
-    second: "Sam",
-    third: "Ray",
-    fourth: "Bob",
-};
+const runTaskButton = document.querySelector("#taskOne");
 
-let {first: f, second, third: x, fourth, fifth='Name №5'} = names;
+runTaskButton.addEventListener('click', function () {
+    console.log("Task #1");
+    let names = {
+        first: "Tom",
+        second: "Sam",
+        third: "Ray",
+        fourth: "Bob",
+    };
 
-console.log(f); // "Tom"
-console.log(x); // "Ray"
-console.log(fifth); // "Name №5"
+    let { first: f, second, third: x, fourth, fifth = 'Name №5' } = names;
+
+    console.log(f); // "Tom"
+    console.log(x); // "Ray"
+    console.log(fifth); // "Name №5"
+});
