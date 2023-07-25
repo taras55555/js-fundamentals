@@ -3,5 +3,18 @@ const runTaskButton = document.querySelector("#taskFour");
 
 runTaskButton.addEventListener('click', function () {
     console.log("Task #4");
-    alert("The solution for this task is currently unavailable.");
+
+    const delay = (i, time) => new Promise(resolve => setTimeout(() => resolve(i), time));
+
+    async function showNumbers() {
+        // your code with using delay(i, time)
+        const sequence = [];
+        for (let i = 0; i <= 10; i++) {
+            const interval = Math.floor(Math.random() * 2000);
+            // console.log(interval);
+            sequence.push(await delay(i, interval));
+        }
+        console.log(sequence.join());
+    }
+    showNumbers();
 });
