@@ -9,9 +9,11 @@ runTaskButton.addEventListener('click', function () {
     async function showNumbers() {
         // your code with using delay(i, time)
         const sequence = [];
+        const n = 2000;
         for (let i = 0; i <= 10; i++) {
-            const interval = Math.floor(Math.random() * 2000);
-            // console.log(interval);
+            
+            const interval = Math.floor(Math.random() * n);
+            console.log(interval);
             sequence.push(await delay(i, interval));
         }
         console.log(sequence.join());
