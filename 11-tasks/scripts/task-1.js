@@ -15,6 +15,6 @@ http.createServer(function (req, res) {
     const dirName = process.cwd();
 
     const data = 'Current user name: ' + userInfo + '\nOS type: ' + osType + '\nSystem work time: ' + osUptime + ' minutes\nCurrent work directory: ' + dirName + '\nServer file name: ' + filename;
-    // const combinedDataJSON = JSON.stringify(userInfo, "<br>",osType);
+
     res.end(data);
 }).listen(port);
