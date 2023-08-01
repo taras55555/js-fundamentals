@@ -13,7 +13,7 @@ runTaskButton.addEventListener('click', function () {
             console.log(ajax.status + " " + ajax.statusText);
         }
     }
-    ajax.open("GET", "http://localhost:3000/");
+    ajax.open("GET", window.location.href);
     ajax.send();
 
 });
